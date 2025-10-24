@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom' // ← ADD THIS
+
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import './head.css';
 import { useState } from 'react';
@@ -27,13 +27,9 @@ function Head() {
                 <ul className='list'>
                     {links.map((item) => (
                         <li key={item.name}>
-                            <Link
-                                to={item.path} 
-                                className='link-list'
-                                onClick={() => setmenuopen(false)} // Close menu on click
-                            >
-                                {item.name}
-                            </Link>
+                           <a href={item.path} className='link-list' onClick={() => setmenuopen(false)}>
+  {item.name}
+</a>
                         </li>
                     ))}
                 </ul>
